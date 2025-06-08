@@ -42,4 +42,7 @@ def update_json_record(filepath, key, value, update_data):
 def delete_json_record(filepath, key, value):
     data = read_json(filepath)
     new_data = [record for record in data if record.get(key) != value]
-    write_json(filepath, new_data)
+    deleted = len(data) != len(new_data)
+    if deleted:
+        write_json(filepath, new_data)
+    return deleted

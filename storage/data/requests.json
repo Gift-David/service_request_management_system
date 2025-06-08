@@ -5,7 +5,7 @@
         "description": "repair mt fridge",
         "priority": " high",
         "status": "in progress",
-        "date logged": "today",
+        "date_logged": "today",
         "deadline": "future date"
     }
 ]
