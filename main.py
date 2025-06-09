@@ -1,5 +1,13 @@
 from clients.add import add_client
 from clients.delete import delete_client
+from clients.view import view_clients
+from clients.update import update_client
+from requests.log import log_request
+from requests.history import client_history
+from requests.update_status import update_status
+from requests.view_requests import view_requests
+
+from datetime import datetime
 
 
 
@@ -25,20 +33,43 @@ def request_menu():
         print(f"{i}. {item.title()}")
         i += 1
 
-# name = str(input("Enter clients name: "))
-#     email = str(input("Enter clients email: "))
-#     phone = str(input("Enter clients phone number: "))
-#     address = str(input("Enter clients address: "))
+def new_client():
+    name = str(input("Enter clients name: "))
+    email = str(input("Enter clients email: "))
+    phone = str(input("Enter clients phone number: "))
+    address = str(input("Enter clients address: "))
 
-#     new_client = {
-#         "name": name,
-#         "email": email,
-#         "phone": phone,
-#         "address": address
-#     }
+    new_client = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "address": address
+    }
 
-#     add_client(new_client)
-#     delete_client(email)
+    add_client(new_client)
+
+def update_client_():
+    email = str(input("Enter clients email: "))
+    key = str(input("Enter the information you want to update: "))
+    value = str(input("Enter the current {key}"))
+    update_value = input("Enter the new {key}")
+    update_client(email, key, value, update_value)
+
+def remove_client():
+    email = str(input("Enter clients email: "))
+    delete_client(email)
+
+def new_request():
+
+    new_request = {
+        "email": email,
+        "type": type,
+        "description": description,
+        "priority": priority,
+        "status": status,
+        "date_logged": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "deadline": deadline
+    }
 
 
 
@@ -50,7 +81,7 @@ def main():
             client_menu()
             client_choice = int(input("Choose an option: "))
             if client_choice == 1:
-                pass
+                view_clients()
             elif client_choice ==2:
                 pass
             elif client_choice == 3:
