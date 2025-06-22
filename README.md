@@ -24,3 +24,21 @@ Building this application tested my skills on;
 - Python Functions
 - Python 'if/else' statement
 - Git and GitHub workflows
+
+## Getting Started
+
+### Prerequisites
+Python 3 or higher
+
+### Installation
+- **Clone the repository**
+In your choice directory, clone the repository or run the command;
+```bash
+git clone https://github.com/Gift-David/service_request_management_system.git
+```
+
+### How To Use
+To use the application, execute the main Python script from your terminal:
+
+```bash
+python your_main_script_namme.py
