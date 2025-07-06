@@ -126,43 +126,44 @@ def main():
             choice = int(input("Choose an option: "))
         except ValueError as e:
             print(f"Invalid input: {e}")
-            return
-        if choice == 1:
-            client_menu()
-            client_choice = int(input("Choose an option: "))
-            if client_choice == 1:
-                view_clients()
-            elif client_choice ==2:
-                new_client()
-            elif client_choice == 3:
-                update_client_()
-            elif client_choice == 4:
-                remove_client
-            elif client_choice == 5:
-                pass
+        else:
+            if choice == 1:
+                client_menu()
+                client_choice = int(input("Choose an option: "))
+                if client_choice == 1:
+                    view_clients()
+                elif client_choice ==2:
+                    new_client()
+                elif client_choice == 3:
+                    update_client_()
+                elif client_choice == 4:
+                    remove_client
+                elif client_choice == 5:
+                    pass
+                else:
+                    print("Invalid input")
+                    break
+                    
+            elif choice == 2:
+                request_menu()
+                request_choice = int(input("Choose an option: "))
+                if request_choice ==1:
+                    view_requests()
+                elif request_choice == 2:
+                    new_request()
+                elif request_choice == 3:
+                    update_status_()
+                elif request_choice == 4:
+                    history()
+                elif request_choice == 5:
+                    pass
+                else:
+                    print("Invalid input") 
+            elif choice == 3:
+                print("Exiting...")
+                break
             else:
                 print("Invalid input")
-                break
-                
-        elif choice == 2:
-            request_menu()
-            request_choice = int(input("Choose an option: "))
-            if request_choice ==1:
-                view_requests()
-            elif request_choice == 2:
-                new_request()
-            elif request_choice == 3:
-                update_status_()
-            elif request_choice == 4:
-                history()
-            elif request_choice == 5:
-                pass
-            else:
-                print("Invalid input") 
-        elif choice == 3:
-            break
-        else:
-            print("Invalid input")
 
 
 if __name__ == "__main__":
