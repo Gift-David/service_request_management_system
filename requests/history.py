@@ -7,3 +7,5 @@ def client_history(email):
     for request in requests:
         if request["email"] == email:
             print(f"Email: {request["email"]}, Type: {request["type"]}, Description: {request["description"]}, Priority: {request["priority"]}, Status: {request["status"]}, Date Logged: {request["date_logged"]}, Deadline: {request["deadline"]}")
+        else:
+            print("ooops! Email does not exists.")
